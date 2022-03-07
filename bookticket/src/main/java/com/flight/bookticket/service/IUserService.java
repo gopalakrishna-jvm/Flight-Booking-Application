@@ -1,5 +1,9 @@
 package com.flight.bookticket.service;
 
-public interface IUserService {
+import java.util.List;
 
+import com.flight.bookticket.admin.entity.Flight;
+
+public interface IUserService {
+	public List<Flight> getFlights(Flight flight);
 }

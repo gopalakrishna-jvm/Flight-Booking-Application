@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.flight.bookticket.admin.entity.Flight;
+
 public class Ticket {
 
 	@Id

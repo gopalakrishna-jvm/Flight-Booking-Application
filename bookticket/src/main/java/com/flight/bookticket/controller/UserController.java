@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flight.bookticket.entity.Flight;
+import com.flight.bookticket.admin.entity.Flight;
 import com.flight.bookticket.entity.Ticket;
 import com.flight.bookticket.service.IUserService;
 
@@ -23,7 +23,7 @@ public class UserController {
 
 	@GetMapping("/flight/search")
 	public List<Flight> searchFlight(@RequestBody Flight flight) {
-		return null;
+		return userService.getFlights(flight);
 		
 	}
 	
