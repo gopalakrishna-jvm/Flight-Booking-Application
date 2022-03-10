@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.flight.bookticket.modal.Booking;
+import com.flight.bookticket.modal.Ticket;
 import com.flight.bookticket.modal.Flight;
 import com.flight.bookticket.modal.Passenger;
 import com.flight.bookticket.modal.User;
@@ -13,13 +13,13 @@ import com.flight.bookticket.modal.User;
 public interface UserService {
     public List<Flight> search(String flightDeparture, String flightArrival);
     
-    public Optional<Booking> userBookFlight(String flightNo, Passenger passenger);
+    public Ticket bookFlight(String flightNo, Passenger passenger);
     
-    public User userRegistration(User user);
+    public User registar(User user);
     
-    public Booking findByPnr(@PathVariable(value = "pnr") String pnr);
+    public Ticket findByPnr(@PathVariable(value = "pnr") String pnr);
     
-    public List<Booking> findByMail(String emailId);
+    public List<Ticket> findByMail(String emailId);
     
-    public Booking deleteByPnr(String pnr);
+    public Ticket cancelTicket(String pnr);
 }

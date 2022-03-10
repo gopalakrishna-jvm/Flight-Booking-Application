@@ -21,6 +21,4 @@ public class PnrGenerator {
         return pnr.toString();
     }
 
-
-
 }

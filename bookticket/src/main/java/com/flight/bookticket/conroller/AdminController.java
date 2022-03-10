@@ -1,6 +1,9 @@
 package com.flight.bookticket.conroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,25 +12,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.flight.bookticket.modal.Admin;
 import com.flight.bookticket.modal.Flight;
-import com.flight.bookticket.services.AdminServiceImpl;
+import com.flight.bookticket.services.AdminService;
 
 @RestController
 public class AdminController {
 
-    @Autowired
-    AdminServiceImpl adminService;
+	@Autowired
+	AdminService adminService;
 
-    @PostMapping("/flight/airline/inventory/add")
-    public Flight addFlight(@RequestBody Flight flight){return adminService.addFlight(flight);}
+	@PostMapping(value = "/flight/airline/inventory/add", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
+			"content-type=application/json" })
+	public ResponseEntity<?> addFlight(@RequestBody Flight flight) {
+		return new ResponseEntity<Flight>(adminService.addFlight(flight), HttpStatus.CREATED);
+	}
 
-    @PostMapping("/flight/admin/login")
-    public Admin login(@RequestBody Admin admin) {
-        return adminService.login(admin);
-    }
+	@PostMapping(value = "/flight/admin/login", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
+			"content-type=application/json" })
+	public ResponseEntity<?> login(@RequestBody Admin admin) {
+		return new ResponseEntity<Admin>(adminService.login(admin), HttpStatus.ACCEPTED);
+	}
 
-    @PutMapping("/flight/admin/status")
-    public String changeStatus(@RequestParam(value ="flightNo") String flightNo,@RequestParam(value ="status") String status){
-      return adminService.changeStatus(flightNo,status);
-    }
+	@PutMapping("/flight/admin/status")
+	public ResponseEntity<?> changeStatus(@RequestParam(value = "flightNo") String flightNo,
+			@RequestParam(value = "status") String status) {
+		return new ResponseEntity<String>(adminService.changeStatus(flightNo, status), HttpStatus.OK);
+	}
 
 }

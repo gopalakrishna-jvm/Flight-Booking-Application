@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "bokkings")
-public class Booking {
+public class Ticket {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Booking {
 	@Column(name = "userEmail")
 	private String userEmail;
 
-	public Booking() {
+	public Ticket() {
 	}
 
 	public Integer getId() {
