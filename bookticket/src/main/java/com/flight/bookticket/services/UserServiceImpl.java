@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
 	public Ticket bookFlight(String flightNo, Passenger passenger) {
 
 		if (flightNo != null && flightRepository.findByFlightNo(flightNo) != null) {
+
 			String pnr = pnrGenerator.getPnr();
 			passenger.setPnr(pnr);
 			passengerRepository.save(passenger);
@@ -47,6 +48,7 @@ public class UserServiceImpl implements UserService {
 			return ticket;
 		}
 		return new Ticket();
+
 	}
 
 	public User registar(User user) {
