@@ -1,6 +1,7 @@
 package com.flight.bookticket.services;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,8 +24,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserRepository userRepository;
 	@Autowired
-	PnrGenerator pnrGenerator;
-	@Autowired
 	BookingRepository bookingRepository;
 	@Autowired
 	PassengerRepository passengerRepository;
@@ -37,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
 		if (flightNo != null && flightRepository.findByFlightNo(flightNo) != null) {
 
-			String pnr = pnrGenerator.getPnr();
+			String pnr = genaratePnr();
 			passenger.setPnr(pnr);
 			passengerRepository.save(passenger);
 			Ticket ticket = new Ticket();
@@ -67,5 +66,12 @@ public class UserServiceImpl implements UserService {
 		Ticket ticket = bookingRepository.findByPnr(pnr);
 		bookingRepository.delete(ticket);
 		return ticket;
+	}
+	// General methods
+
+	private String genaratePnr() {
+		StringBuffer pnr = new StringBuffer();
+		pnr.append(new Random().nextInt(1000000));
+		return pnr.toString();
 	}
 }
