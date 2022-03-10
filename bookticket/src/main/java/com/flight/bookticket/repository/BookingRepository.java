@@ -10,10 +10,10 @@ import com.flight.bookticket.modal.Ticket;
 
 public interface BookingRepository extends JpaRepository<Ticket,Integer> {
 
-    @Query(value = "select a from Booking a where a.pnr = :pnr")
+    @Query(value = "select a from Ticket a where a.pnr = :pnr")
     Ticket findByPnr(@Param(value = "pnr") String pnr);
 
-    @Query(value = "select a from Booking a where a.userEmail = :userEmail")
+    @Query(value = "select a from Ticket a where a.userEmail = :userEmail")
     List<Ticket> findByEmail(@Param(value = "userEmail") String userEmail);
 
 

@@ -1,7 +1,6 @@
 package com.flight.bookticket.conroller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,13 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flight.bookticket.modal.Admin;
-import com.flight.bookticket.modal.Ticket;
 import com.flight.bookticket.modal.Flight;
 import com.flight.bookticket.modal.Passenger;
+import com.flight.bookticket.modal.Ticket;
 import com.flight.bookticket.modal.User;
 import com.flight.bookticket.services.UserService;
-import com.flight.bookticket.services.UserServiceImpl;
 
 @RestController
 public class UserController {
