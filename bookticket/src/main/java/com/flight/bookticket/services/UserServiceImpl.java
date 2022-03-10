@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 			Ticket ticket = new Ticket();
 			ticket.setFlightNo(flightNo);
 			ticket.setPnr(pnr);
-			ticket.setUserEmail(passenger.getBookingMail());
+			ticket.setUserMail(passenger.getBookingMail());
 			bookingRepository.save(ticket);
 			return ticket;
 		}

@@ -8,23 +8,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user_login")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name ="user_id" )
+    @Column(name ="id" )
     private Integer id;
 
-    @Column(name="user_first_name")
+    @Column(name="first_name")
     private String firstName;
-    @Column(name="user_last_name")
+    @Column(name="last_name")
     private String lastName;
-    @Column(name="user_pwd")
+    @Column(name="pwd")
     private String password;
-    @Column(name="user_mail")
-    private String email;
-    @Column(name="user_phone")
+    @Column(name="mail")
+    private String mail;
+    @Column(name="phone")
     private Integer phone;
 
     public User() {
@@ -61,12 +61,12 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMail() {
+        return mail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMail(String email) {
+        this.mail = email;
     }
 
     public Integer getPhone() {

@@ -18,8 +18,8 @@ public class Ticket {
 	private String pnr;
 	@Column(name = "flightNo")
 	private String flightNo;
-	@Column(name = "userEmail")
-	private String userEmail;
+	@Column(name = "userMail")
+	private String userMail;
 
 	public Ticket() {
 	}
@@ -48,11 +48,11 @@ public class Ticket {
 		this.flightNo = flightNo;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getUserMail() {
+		return userMail;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
 	}
 }
