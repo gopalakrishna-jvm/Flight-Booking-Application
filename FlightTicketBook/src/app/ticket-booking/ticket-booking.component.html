@@ -1,0 +1,48 @@
+<div class="col-md-3 offset-md-3">
+    <h4> book ticket</h4>
+    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onAdd()">
+
+        <div class="form-group">
+            <label> First Name </label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="passenger.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label>Last Name </label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="passenger.lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label> age</label>
+            <input type="number" class="form-control" id="age" [(ngModel)]="passenger.age" name="age">
+        </div>
+        <div class="form-group">
+            <label> Mail </label>
+            <input type="text" class="form-control" id="mail" [(ngModel)]="passenger.mail" name="mail">
+        </div>
+        <div class="form-group">
+            <label> no of seats</label>
+            <input type="number" class="form-control" id="seatNo" [(ngModel)]="passenger.seatNo" name="seatNo">
+        </div>
+
+        <div class="form-group">
+            <label></label>
+            <input type="radio" value="male" id="gender"  [ngModel]="passenger.gender" name="gender"> Male
+            <input type="radio" value="female" id="gender" [ngModel]="passenger.gender" name="gender" >
+            Female
+        </div>
+        <div class="form-group">
+            <label> Meal Type :</label>
+            <input type="radio" value="veg" name="mealType" [ngModel]="passenger.mealType" id="mealType" > veg
+            <input type="radio" value="non-veg" name="mealType" [ngModel]="passenger.mealType" id="mealType" >non-veg
+        </div>
+       
+        <!-- <button class="btn btn-success" type="add">Add</button> <tr></tr>  -->
+
+      
+
+    </form>
+    <button class="btn btn-success" type="submit">Book Ticket</button>
+    </form>
+</div>

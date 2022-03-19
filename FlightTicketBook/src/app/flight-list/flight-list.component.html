@@ -1,0 +1,58 @@
+<div class="col-md-2 offset-md-2">
+    <h4> Search flight </h4>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> From </label>
+            <input type="text" class="form-control" id="departureFrom" [(ngModel)]="searchDetails.departureFrom"
+                name="departureFrom">
+        </div>
+
+        <div class="form-group">
+            <label>To </label>
+            <input type="text" class="form-control" id="arrivalTo" [(ngModel)]="searchDetails.arrivalTo"
+                name="arrivalTo">
+        </div>
+
+        <div class="form-group">
+            <label> Date</label>
+            <input type="datetime" class="form-control" id="departureDate" [(ngModel)]="searchDetails.departureDate"
+                name="departureDate">
+        </div>
+
+        <button class="btn btn-success" type="submit">Search</button>
+
+    </form>
+</div>
+
+
+
+
+<!-- Flight list code-->
+<h2> Flight List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Flight Number</th>
+            <th> Flight Name </th>
+            <th> departure From</th>
+            <th> arrival To </th>
+            <th> departure Date </th>
+            <th> Actions </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights">
+            <td> {{ flight.flightNo }} </td>
+            <td> {{ flight.name }} </td>
+            <td> {{ flight.departureFrom }} </td>
+            <td> {{ flight.arrivalTo }} </td>
+            <td> {{ flight.departureDate }} </td>
+
+            <td>
+                <button (click)="TicketBooking(flight.flightNo)" class="btn btn-info"> book</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

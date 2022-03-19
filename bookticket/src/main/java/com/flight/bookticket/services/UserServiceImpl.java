@@ -28,8 +28,11 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	PassengerRepository passengerRepository;
 
-	public List<Flight> search(String flightDeparture, String flightArrival) {
-		return flightRepository.findByDeparture(flightDeparture, flightArrival);
+	public List<Flight> search(String flightDeparture, String flightArrival, String departureDate) {
+		System.out.println("List of flights parameters " + flightDeparture + " " + flightArrival + " " + departureDate);
+		List<Flight> flights = flightRepository.findByDeparture(flightDeparture, flightArrival);
+		System.out.println("List of flights " + flights);
+		return flights;
 	}
 
 	public Ticket bookFlight(String flightNo, Passenger passenger) {
@@ -37,12 +40,13 @@ public class UserServiceImpl implements UserService {
 		if (flightNo != null && flightRepository.findByFlightNo(flightNo) != null) {
 
 			String pnr = genaratePnr();
+			Ticket ticket = new Ticket();
 			passenger.setPnr(pnr);
 			passengerRepository.save(passenger);
-			Ticket ticket = new Ticket();
+			ticket.setUserMail(passenger.getBookingMail());
 			ticket.setFlightNo(flightNo);
 			ticket.setPnr(pnr);
-			ticket.setUserMail(passenger.getBookingMail());
+
 			bookingRepository.save(ticket);
 			return ticket;
 		}

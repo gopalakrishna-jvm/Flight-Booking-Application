@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,17 +27,17 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@GetMapping(value = "/flight/search", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
-			"content-type=application/json" })
-	public ResponseEntity<?> search(@RequestParam String flightDeparture, @RequestParam String flightArrival) {
-		return new ResponseEntity<List<Flight>>(userService.search(flightDeparture, flightArrival), HttpStatus.OK);
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping(value ="/flight/search")
+	public ResponseEntity<?> search(@RequestParam String flightDeparture, @RequestParam String flightArrival ,  @RequestParam String departureDate) {
+		return new ResponseEntity<List<Flight>>(userService.search(flightDeparture, flightArrival , departureDate), HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/flight/booking/{flightNo}", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
-			"content-type=application/json" })
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping(value = "/flight/booking/{flightNo}")
 	public ResponseEntity<?> bookFlight(@PathVariable(name = "flightNo") String flightNo,
-			@RequestBody Passenger passenger) {
-		return new ResponseEntity<Ticket>(userService.bookFlight(flightNo, passenger), HttpStatus.CREATED);
+			@RequestBody Passenger passengers) {
+		return new ResponseEntity<Ticket>(userService.bookFlight(flightNo, passengers), HttpStatus.CREATED);
 	}
 
 	@PostMapping(value = "/flight/airline/UserRegister", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
@@ -51,6 +52,7 @@ public class UserController {
 		return new ResponseEntity<Ticket>(userService.findByPnr(pnr), HttpStatus.OK);
 	}
 
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/flight/booking/history/{emailId}", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
 			"content-type=application/json" })
 	public ResponseEntity<?> findByMail(@PathVariable(value = "emailId") String emailId) {

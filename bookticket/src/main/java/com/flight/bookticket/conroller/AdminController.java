@@ -20,13 +20,13 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 
-	@PostMapping(value = "/flight/airline/inventory/add", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
+	@PostMapping(value = "/flight/airline/inventory/add", headers = {
 			"content-type=application/json" })
 	public ResponseEntity<?> addFlight(@RequestBody Flight flight) {
 		return new ResponseEntity<Flight>(adminService.addFlight(flight), HttpStatus.CREATED);
 	}
 
-	@PostMapping(value = "/flight/admin/login", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
+	@PostMapping(value = "/flight/admin/login",  headers = {
 			"content-type=application/json" })
 	public ResponseEntity<?> login(@RequestBody Admin admin) {
 		return new ResponseEntity<Admin>(adminService.login(admin), HttpStatus.ACCEPTED);

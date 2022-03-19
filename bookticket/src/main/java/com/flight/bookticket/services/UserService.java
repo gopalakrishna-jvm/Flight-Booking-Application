@@ -11,9 +11,9 @@ import com.flight.bookticket.modal.Passenger;
 import com.flight.bookticket.modal.User;
 
 public interface UserService {
-    public List<Flight> search(String flightDeparture, String flightArrival);
+    public List<Flight> search(String flightDeparture, String flightArrival , String departureDate);
     
-    public Ticket bookFlight(String flightNo, Passenger passenger);
+    public Ticket bookFlight(String flightNo, Passenger passengers);
     
     public User registar(User user);
     
