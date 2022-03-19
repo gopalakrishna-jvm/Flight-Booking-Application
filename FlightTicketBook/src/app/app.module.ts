@@ -9,6 +9,7 @@ import { FlightListComponent } from './flight-list/flight-list.component';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { RegistarUserComponent } from './registar-user/registar-user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     FlightListComponent,
     TicketBookingComponent,
     AdminLoginComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    RegistarUserComponent
   ],
   imports: [
     BrowserModule,

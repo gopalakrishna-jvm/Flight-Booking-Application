@@ -39,11 +39,16 @@ public class UserController {
 			@RequestBody Passenger passengers) {
 		return new ResponseEntity<Ticket>(userService.bookFlight(flightNo, passengers), HttpStatus.CREATED);
 	}
-
-	@PostMapping(value = "/flight/airline/UserRegister", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {
-			"content-type=application/json" })
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping(value = "/flight/airline/registar")
 	public ResponseEntity<?> registration(@RequestBody User user) {
 		return new ResponseEntity<User>(userService.registar(user), HttpStatus.CREATED);
+	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(value = "/flight/airline/registar/{mail}")
+	public ResponseEntity<User> getByMail(@PathVariable(name = "mail") String mail) {
+		return new ResponseEntity<User>(userService.getUser(mail), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/flight/ticket/{pnr}", consumes = MediaType.APPLICATION_JSON_VALUE, headers = {

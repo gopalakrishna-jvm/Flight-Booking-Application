@@ -58,6 +58,9 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(user);
 	}
 
+	public User getUser(String mail) {
+		return userRepository.findByMail(mail);
+	}
 	public Ticket findByPnr(@PathVariable(value = "pnr") String pnr) {
 		return bookingRepository.findByPnr(pnr);
 	}

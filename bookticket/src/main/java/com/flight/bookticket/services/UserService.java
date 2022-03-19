@@ -17,6 +17,8 @@ public interface UserService {
     
     public User registar(User user);
     
+    public User getUser(String mail);
+    
     public Ticket findByPnr(@PathVariable(value = "pnr") String pnr);
     
     public List<Ticket> findByMail(String emailId);

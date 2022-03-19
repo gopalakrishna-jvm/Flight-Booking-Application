@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,9 +26,8 @@ public class AdminController {
 	public ResponseEntity<?> addFlight(@RequestBody Flight flight) {
 		return new ResponseEntity<Flight>(adminService.addFlight(flight), HttpStatus.CREATED);
 	}
-
-	@PostMapping(value = "/flight/admin/login",  headers = {
-			"content-type=application/json" })
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping(value = "/flight/admin/login")
 	public ResponseEntity<?> login(@RequestBody Admin admin) {
 		return new ResponseEntity<Admin>(adminService.login(admin), HttpStatus.ACCEPTED);
 	}

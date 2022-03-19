@@ -5,6 +5,7 @@ import { Flight } from '../Entity/flight';
 import { Passenger } from '../Entity/passenger';
 import { SearchDetails } from '../Entity/search-details';
 import { Ticket } from '../Entity/ticket';
+import { User } from '../Entity/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,9 @@ export class UserService {
    return this.httpClient.post(`${this.baseURL+"booking"}/${flightNo}`, passengers)
   }
 
-
+  private getUserUrl ="http://localhost:8082/flight/admin/login";
+  getUser(mail : String) : Observable<any> {
+    return this.httpClient.get(`${this.getUserUrl}/${mail}`);
+  }
 
 }

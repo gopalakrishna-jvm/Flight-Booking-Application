@@ -22,7 +22,7 @@ public class User {
     private String lastName;
     @Column(name="pwd")
     private String password;
-    @Column(name="mail")
+    @Column(name = "mail",unique = true,nullable = false)
     private String mail;
     @Column(name="phone")
     private Integer phone;

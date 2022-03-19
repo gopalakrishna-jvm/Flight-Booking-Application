@@ -1,0 +1,35 @@
+<div class="col-md-3 offset-md-3">
+    <h4>User Registation</h4>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> First Name </label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label>Last Name </label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label> User Name</label>
+            <input type="text" class="form-control" id="mail" [(ngModel)]="user.mail" name="mail">
+        </div>
+        <div class="form-group">
+            <label> Password </label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
+        </div>
+        <div class="form-group">
+            <label> Re Enter Password </label>
+            <input type="password" class="form-control" id="reEnterPassword" [(ngModel)]="user.reEnterPassword" name="reEnterPassword">
+        </div>
+        <div class="form-group">
+            <label> phone no  </label>
+            <input type="number" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone">
+        </div>
+       
+       
+    <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>

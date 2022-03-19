@@ -27,7 +27,9 @@ export class FlightListComponent implements OnInit {
       this.flights = data;
       console.log(this.flights);
     })
+    
   }
+ 
 
   onSubmit() {
     console.log(this.searchDetails);
