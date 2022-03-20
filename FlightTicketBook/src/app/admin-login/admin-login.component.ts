@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Admin } from '../Entity/admin';
 import { AdminService } from '../services/admin.service';
 
@@ -11,7 +12,7 @@ export class AdminLoginComponent implements OnInit {
 
   admin: Admin = new Admin();
   dataBaseDetails!: Admin;
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService ,  private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,7 @@ export class AdminLoginComponent implements OnInit {
 
   checkDetails(dataBaseadmin: Admin) {
     if (dataBaseadmin.password == this.admin.password) {
-      alert("login seccuss");
+      this.router.navigate(['add-flight'])
     } else {
       alert("please enter currect password");
     }

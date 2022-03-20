@@ -28,9 +28,13 @@ export class UserService {
    return this.httpClient.post(`${this.baseURL+"booking"}/${flightNo}`, passengers)
   }
 
-  private getUserUrl ="http://localhost:8082/flight/admin/login";
+  private UserUrl ="http://localhost:8082/flight/airline/registar";
   getUser(mail : String) : Observable<any> {
-    return this.httpClient.get(`${this.getUserUrl}/${mail}`);
+    return this.httpClient.get(`${this.UserUrl}/${mail}`);
+  }
+  
+  save(user : User) :Observable<any>{
+    return this.httpClient.post(`${this.UserUrl}` , user);
   }
 
 }

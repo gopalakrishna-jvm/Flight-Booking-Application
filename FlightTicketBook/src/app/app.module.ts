@@ -10,6 +10,8 @@ import { TicketBookingComponent } from './ticket-booking/ticket-booking.componen
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { RegistarUserComponent } from './registar-user/registar-user.component';
+import { UserHistoryComponent } from './user-history/user-history.component';
+import { AdminAddFlightComponent } from './admin-add-flight/admin-add-flight.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RegistarUserComponent } from './registar-user/registar-user.component';
     TicketBookingComponent,
     AdminLoginComponent,
     UserLoginComponent,
-    RegistarUserComponent
+    RegistarUserComponent,
+    UserHistoryComponent,
+    AdminAddFlightComponent
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@ export class UserLoginComponent implements OnInit {
   }
   checkDetails(dataBaseUser : User){
     if(dataBaseUser.password==this.user.password){
-      alert("login seccuss");
+      this.router.navigate(['user-history']);
     }else{
       alert("please enter currect password");
     }

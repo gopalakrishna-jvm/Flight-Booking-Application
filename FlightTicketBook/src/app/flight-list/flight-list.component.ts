@@ -36,7 +36,7 @@ export class FlightListComponent implements OnInit {
     this.searchFlight();
   }
 
-  TicketBooking(flightNo: string) {
+  ticketBooking(flightNo: string) {
     this.router.navigate(['ticket-booking', flightNo])
   }
 
