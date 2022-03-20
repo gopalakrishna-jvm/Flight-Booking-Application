@@ -12,6 +12,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { RegistarUserComponent } from './registar-user/registar-user.component';
 import { UserHistoryComponent } from './user-history/user-history.component';
 import { AdminAddFlightComponent } from './admin-add-flight/admin-add-flight.component';
+import { AdminFlightListComponent } from './admin-flight-list/admin-flight-list.component';
+import { EditFlightComponent } from './edit-flight/edit-flight.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AdminAddFlightComponent } from './admin-add-flight/admin-add-flight.com
     UserLoginComponent,
     RegistarUserComponent,
     UserHistoryComponent,
-    AdminAddFlightComponent
+    AdminAddFlightComponent,
+    AdminFlightListComponent,
+    EditFlightComponent
   ],
   imports: [
     BrowserModule,

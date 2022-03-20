@@ -27,15 +27,17 @@
         </div>
 
         <div class="form-group">
-            <label></label>
-            <input type="radio" value="male" id="gender"  [ngModel]="passenger.gender" name="gender"> Male
-            <input type="radio" value="female" id="gender" [ngModel]="passenger.gender" name="gender" >
-            Female
+            <br>Status: <input type="radio" class="form-check-input" [(ngModel)]="passenger.gender" name="gender"
+                value="Male">Male
+            <input type="radio" class="form-check-input" [(ngModel)]="passenger.gender" name="gender"
+                value="female">Female<br>
         </div>
+
         <div class="form-group">
-            <label> Meal Type :</label>
-            <input type="radio" value="veg" name="mealType" [ngModel]="passenger.mealType" id="mealType" > veg
-            <input type="radio" value="non-veg" name="mealType" [ngModel]="passenger.mealType" id="mealType" >non-veg
+            <br>Status: <input type="radio" class="form-check-input" [(ngModel)]="passenger.mealType" name="mealType"
+                value="Veg">Veg
+            <input type="radio" class="form-check-input" [(ngModel)]="passenger.mealType" name="mealType"
+                value="non-veg">non-veg<br>
         </div>
        
         <!-- <button class="btn btn-success" type="add">Add</button> <tr></tr>  -->

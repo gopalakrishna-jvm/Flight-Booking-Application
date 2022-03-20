@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminAddFlightComponent } from './admin-add-flight/admin-add-flight.component';
+import { AdminFlightListComponent } from './admin-flight-list/admin-flight-list.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { EditFlightComponent } from './edit-flight/edit-flight.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { RegistarUserComponent } from './registar-user/registar-user.component';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path :'user-login' , component : UserLoginComponent},
   {path : 'user-registar' , component : RegistarUserComponent},
   {path : 'user-history' , component : UserHistoryComponent},
-  {path : 'add-flight' , component : AdminAddFlightComponent}
+  {path : 'add-flight' , component : AdminAddFlightComponent},
+  {path : 'add-flight/admin-flight-list' , component : AdminFlightListComponent},
+  {path : 'edit-flight' ,component : EditFlightComponent}
 
 ];
 

@@ -1,1 +1,41 @@
-<p>admin-add-flight works!</p>
+<div class="col-md-3 offset-md-3">
+    <h4>Flight Details</h4>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Flight Number </label>
+            <input type="text" class="form-control" id="flightNo" [(ngModel)]="flight.flightNo" name="flightNo">
+        </div>
+
+        <div class="form-group">
+            <label>Flight Name </label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="flight.name" name="name">
+        </div>
+        <div class="form-group">
+            <label> Departure From</label>
+            <input type="text" class="form-control" id="departureFrom" [(ngModel)]="flight.departureFrom"
+                name="departureFrom">
+        </div>
+        <div class="form-group">
+            <label> Arrival To </label>
+            <input type="text" class="form-control" id="arrivalTo" [(ngModel)]="flight.arrivalTo" name="arrivalTo">
+        </div>
+        <div class="form-group">
+            <label> cost </label>
+            <input type="number" class="form-control" id="cost" [(ngModel)]="flight.cost" name="cost">
+        </div>
+        <div class="form-group">
+            <label> Total Seats </label>
+            <input type="number" class="form-control" id="totalSeats" [(ngModel)]="flight.totalSeats" name="totalSeats">
+        </div>
+        <div class="form-group">
+            <br>Status: <input type="radio" class="form-check-input" [(ngModel)]="flight.status" name="status"
+                value="Blocked">Block
+            <input type="radio" class="form-check-input" [(ngModel)]="flight.status" name="status"
+                value="Unblocked">Unblock<br>
+        </div>
+
+
+        <button class="btn btn-success" type="submit">Add Flight</button>
+    </form>
+</div>

@@ -21,6 +21,11 @@ public class AdminServiceImpl implements AdminService {
 	public Flight addFlight(Flight flight) {
 		return flightRepository.save(flight);
 	}
+	
+	public Flight getFlight (String flightNo) {
+		
+		return flightRepository.findByFlightNo(flightNo);
+	}
 
 	public Admin login(Admin admin) {
 		if (admin != null) {

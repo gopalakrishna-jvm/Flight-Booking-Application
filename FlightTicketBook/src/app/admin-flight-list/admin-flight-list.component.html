@@ -1,0 +1,29 @@
+
+<!-- Flight list code-->
+<h2> Flight List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Flight Number</th>
+            <th> Flight Name </th>
+            <th> departure From</th>
+            <th> arrival To </th>
+            <th> departure Date </th>
+            <th> Actions </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights">
+            <td> {{ flight.flightNo }} </td>
+            <td> {{ flight.name }} </td>
+            <td> {{ flight.departureFrom }} </td>
+            <td> {{ flight.arrivalTo }} </td>
+            <td> {{ flight.departureDate }} </td>
+
+            <td>
+                <button (click)="editFlight(flight.flightNo)" class="btn btn-info"> Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

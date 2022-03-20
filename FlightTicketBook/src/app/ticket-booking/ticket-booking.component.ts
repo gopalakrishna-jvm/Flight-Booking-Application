@@ -25,6 +25,7 @@ export class TicketBookingComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log(this.passenger)
     this.flightNo =this.route.snapshot.params['flightNo'];
     this.userService.bookFlight( this.passenger , this.flightNo).subscribe( data =>{
       console.log(data);
